@@ -1,0 +1,11 @@
+{
+ "name": "Fake Followers",
+ "description": "Displays ratio of fake followers on a twitter account on the twitter page",
+ "manifest_version": 2,
+ "version": "1.0",
+ "permissions": ["tabs", "http://*/*", "background"],
+ "background": {"page": "background.html"},
+ "content_scripts": [{"matches": ["http://twitter.com/*","https://twitter.com/*"],"js": ["jquery-1.10.0.min.js","inject.js"]}],
+ "browser_action": {"default_icon": "16x16.png","default_popup": "popup.html"}
+}
+
