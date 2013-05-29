@@ -14,9 +14,15 @@ if (typeof jQuery === 'undefined') {
 
     	// Find Twitter Audit score percentage from within the retrieved data using jQuery
       var percentage = $(data).find('.percentage').html();
+
+      // If a Twitter Audit hasn't been made yet
+     	if (percentage === 'undefined') {
+      	$('.stats').append('<li><a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + ':(' + '</strong> Real</a></li>');
+      } else {
       
-      // Inject this percentage as a new list element in the .stats div, using inline CSS to fit the design of twitter
-      $('.stats').append('<li><a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + percentage + '</strong> Real</a></li>');
+	      // Inject this percentage as a new list element in the .stats div, using inline CSS to fit the design of twitter
+	      $('.stats').append('<li><a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + percentage + '</strong> Real</a></li>');
+	    }
 
     });
 
