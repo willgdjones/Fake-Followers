@@ -2,7 +2,6 @@
  "name": "Fake Followers",
  "description": "Displays the ratio of fake followers inline on Twitter.com.",
  "manifest_version": 2,
- "authors": ["Will Jones", "Will Hines"],
  "version": "1.0",
  "icons": { "16":"16x16.png", "48":"48x48.png", "128":"128x128.png" },
  "permissions": ["tabs", "http://*/*", "background"],
