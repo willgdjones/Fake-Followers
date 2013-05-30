@@ -2,9 +2,15 @@ if (typeof jQuery === 'undefined') {
   alert("Sad face :(")
 } else {
 
-	// Create loading screen 'zzz' as a new list element with .extra class in the .stats div when the page is loading
+	// Declare Ajaxload icon
+	var Ajaxload = chrome.extension.getURL("ajax-loader.gif");
+
+	console.log(!!Ajaxload)
+
+	// Create Ajaxload screen as a new list element with .extra class in the .stats div when the page is loading
 	// Uses inline CSS to fit the design of twitter
-	$('.stats').append('<li class="extra"><a class="js-nav"><strong>zzz</strong></a></li>');
+	$('.stats').append('<li class="extra"><a class="js-nav" href="#" ><img src="' + Ajaxload + '""></a></li>');
+
 
 	// Run main code when twitter page is ready
   jQuery(document).ready(function($){
