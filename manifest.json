@@ -4,7 +4,7 @@
  "manifest_version": 2,
  "version": "1.0",
  "icons": { "16":"16x16.png", "48":"48x48.png", "128":"128x128.png" },
- "web_accessible_resources": ["ajax-loader.gif"],
+ "web_accessible_resources": ["ajax-loader.gif","16x16.png"],
  "permissions": ["tabs", "http://*/*", "background"],
  "background": {"page": "background.html"},
  "content_scripts": [{"matches": ["http://twitter.com/*","https://twitter.com/*"],"js": ["jquery-1.10.0.min.js","inject.js"]}],

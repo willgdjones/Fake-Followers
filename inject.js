@@ -2,12 +2,10 @@ if (typeof jQuery === 'undefined') {
   alert("Sad face :(")
 } else {
 
-	// Declare Ajaxload icon
-	var Ajaxload = chrome.extension.getURL("ajax-loader.gif");
+	// Declare icon
+	var Ajaxload = chrome.extension.getURL("16x16.png");
 
-	console.log(!!Ajaxload)
-
-	// Create Ajaxload screen as a new list element with .extra class in the .stats div when the page is loading
+	// Create loading screen with our icon as a new list element with .extra class in the .stats div when the page is loading
 	// Uses inline CSS to fit the design of twitter
 	$('.stats').append('<li class="extra"><a class="js-nav" href="#" ><img src="' + Ajaxload + '""></a></li>');
 
@@ -17,7 +15,6 @@ if (typeof jQuery === 'undefined') {
 
   	//Get twitter username from URL
     var username = window.location.pathname.replace('/','');
-    console.log(username);
 
     // Send HTTP get request to Twitter Audit with this username
     $.get("http://www.twitteraudit.com/"+username, function(data) {
