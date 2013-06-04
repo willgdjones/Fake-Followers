@@ -1,13 +1,21 @@
+
+// If jQuery is not defined, alert a sad face
 if (typeof jQuery === 'undefined') {
   alert("Sad face :(")
-} else {
+} 
+  // And if it is the twitter home screen, don't run script.
+  else if (window.location.pathname === "https://twitter.com/") {
+  console.log("Don't load on home screen");
+} 
+  // Otherwise, load script
+  else {
 
 	// Declare icon
-	var Ajaxload = chrome.extension.getURL("16x16.png");
+	var loadScreen = chrome.extension.getURL("16x16.png");
 
 	// Create loading screen with our icon as a new list element with .extra class in the .stats div when the page is loading
 	// Uses inline CSS to fit the design of twitter
-	$('.stats').append('<li class="extra"><a class="js-nav" href="#" ><img src="' + Ajaxload + '""></a></li>');
+	$('.stats').append('<li class="extra"><a class="js-nav" href="#" ><img src="' + loadScreen + '""></a></li>');
 
 
 	// Run main code when twitter page is ready
@@ -29,17 +37,17 @@ if (typeof jQuery === 'undefined') {
       
 	      // Otherwise, find out fake percentage
         var fakePercentage = 100 - parseInt(percentage);
-        var fakePercentageString = fakePercentage.toString() + '%'
+        var fakePercentageString = fakePercentage.toString() + '%';
 
         // and replace loading screen with Twitter Audit fake percentage
 
         // If the fake percentage is more than or equal to 50%, display text in red.
         if (fakePercentage >= 50) {
-          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong style="color:red">' + fakePercentageString + '</strong> Fake</a>')  
+          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong style="color:red">' + fakePercentageString + '</strong> Fake</a>'); 
         } else {
 
           // Otherwise, display normally.
-          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + fakePercentageString + '</strong> Fake</a>')
+          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + fakePercentageString + '</strong> Fake</a>');
         }
         
 	    }
@@ -49,3 +57,5 @@ if (typeof jQuery === 'undefined') {
   })
 
 }
+
+
