@@ -31,9 +31,17 @@ if (typeof jQuery === 'undefined') {
         var fakePercentage = 100 - parseInt(percentage);
         var fakePercentageString = fakePercentage.toString() + '%'
 
-
         // and replace loading screen with Twitter Audit fake percentage
-	      $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + fakePercentageString + '</strong> Fake</a>')
+
+        // If the fake percentage is more than or equal to 50%, display text in red.
+        if (fakePercentage >= 50) {
+          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong style="color:red">' + fakePercentageString + '</strong> Fake</a>')  
+        } else {
+
+          // Otherwise, display normally.
+          $('.stats .extra').html('<a class="js-nav" href="http://www.twitteraudit.com/'+username+'"><strong>' + fakePercentageString + '</strong> Fake</a>')
+        }
+        
 	    }
 
     });
