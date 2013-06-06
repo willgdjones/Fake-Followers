@@ -1,6 +1,6 @@
 {
  "name": "Fake Followers",
- "description": "Displays the percentage of fake followers on Twitter accounts",
+ "description": "Displays percentage of fake followers, next to the follower count on twitter profiles.",
  "manifest_version": 2,
  "version": "1.0",
  "icons": { "16":"16x16.png", "48":"48x48.png", "128":"128x128.png" },
