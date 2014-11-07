@@ -5,9 +5,9 @@
  "version": "1.1",
  "icons": { "16":"16x16.png", "48":"48x48.png", "128":"128x128.png" },
  "web_accessible_resources": ["16x16.png"],
- "permissions": ["tabs", "http://*/*", "background"],
+ "permissions": ["tabs", "http://*/*", "background", "https://*/*"],
  "background": {"page": "background.html"},
- "content_scripts": [{"matches": ["http://twitter.com/*","https://twitter.com/*"],"js": ["jquery-1.10.0.min.js","inject.js"]}],
+ "content_scripts": [{"matches": ["http://twitter.com/*","https://twitter.com/*"],"js": ["jquery-1.11.1.min.js","inject.js"]}],
  "browser_action": {"default_title": "Fake Followers", "default_icon":"128x128.png","default_popup": "popup.html"}
 }
 
